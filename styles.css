@@ -1,0 +1,1130 @@
+@font-face 
+{
+    font-family: "Netflix-Sans-Regular";
+    src: url("fonts/NetflixSans-Regular.woff2") format("woff");
+}
+
+@font-face 
+{
+    font-family: "Netflix-Sans-Black";
+    src: url("fonts/NetflixSansBlack.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Netflix-Sans-Regular";
+    box-sizing: border-box;
+    color: white;
+}
+
+button
+{
+    cursor: pointer;
+    border: none;
+}
+
+#background-image
+{
+    background: url("images/header-image.png");
+    background-size: cover;
+    height: 790px;
+    border-bottom: 8px solid #222;
+}
+
+.background
+{
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.8), transparent 60%, rgba(0,0,0,0.8));
+    height: 100.1%;
+}
+
+.navbar
+{
+    display: flex;
+    padding: 22px 185px;
+    margin-bottom: 120px;
+}
+
+.logo
+{
+    width: 150px;
+    height: 42px;
+    margin-right: auto;
+}
+
+.navbar div
+{
+    border: 1px solid rgb(158, 158, 158);
+    height: 35px;
+    margin-top: 5px;
+    margin-right: 1.3rem;
+    border-radius: 5px;
+}
+
+.navbar div i
+{
+    margin-left: 10px;
+    margin-right: -5px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+#language
+{
+    background: transparent;
+    height: 35px;
+    padding: 0 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin-top: -2px;
+}
+
+
+
+#language option
+{
+    color: black;
+}
+
+.signIn
+{
+    margin-top: 5px;
+    background-color: #e50914;
+    font-size: 14px;
+    font-weight: 600;
+    height: 35px;
+    padding: 0 15px;
+    border-radius: 5px;
+}
+
+.contents
+{
+    text-align: center;
+    padding: 75px 20px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.contents h1
+{
+    font-family: "Netflix-Sans-Black";
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.contents p
+{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin: 20px 0;
+}
+
+.form
+{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+h3
+{
+    padding-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.form #form-div
+{
+    background-color: rgba(50, 50, 50, 0.5);
+    width: 400px;
+    height: 54px;
+    position: relative;
+    border: .5px solid rgb(100, 100, 100);
+    border-radius: 5px;
+}
+
+#email-login
+{
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-top: 13px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#email-label
+{
+    color: rgb(200, 199, 199);
+    position: absolute;
+    font-size: 1rem;
+    top: 15px;
+    left: 20px;
+    transition: .2s;
+    pointer-events: none;
+}
+
+#email-login:focus + #email-label
+{
+    top: 0.3rem;
+    font-size: .75rem;
+}
+
+#email-login:not(:placeholder-shown)#email-login:not(:focus) + #email-label
+{
+    top: 0.3rem;
+    font-size: .75rem;
+}
+  
+#email-login:focus-visible
+{
+    outline: none;
+}
+
+.form #getStarted1
+{
+    width: 190px;
+    background-color: #e50914;
+    font-size: 1.4rem;
+    line-height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#email-error
+{
+    font-family: "Netflix-Sans-Regular";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 8px;
+    font-size: .8rem;
+    color: red;
+}
+
+
+
+
+.TV
+{
+    background-color: black;
+    border-bottom: 8px solid #222;
+    padding: 70px 45px;
+}
+
+.container
+{
+    display: flex;
+    max-width: 1250px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+h2
+{
+    font-family: "Netflix-Sans-Black";
+    font-size: 3rem;
+    line-height: 60px;
+}
+
+.TV-clip
+{
+    width: 60%;
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.description
+{
+    width: 50%;
+}
+
+.description p
+{
+    padding: 15px 0;
+    font-size: 1.5rem;
+}
+
+.TV-clip img
+{
+    width: 100%;
+    z-index: 10;
+    max-width: 600px;
+    position: relative;
+}
+
+#TV-video
+{
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 87%;
+    height: 55%;
+}
+
+
+
+
+.Phone
+{
+    background-color: black;
+    border-bottom: 9px solid #222;
+    padding: 70px;
+}
+
+.Phone .container
+{
+    justify-content: space-between;
+}
+
+.mobile
+{
+    position: relative;
+}
+
+.stranger-things
+{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    border-radius: 14px;
+    border: 2px solid hsla(0, 0%, 100%, .35);
+    position: absolute;
+    left: 50%;
+    bottom: 8%;
+    transform: translate(-50%);
+}
+
+.stranger-things .download
+{
+    width: 50px;
+}
+
+.stranger-things .poster
+{
+    width: 60px;
+    margin-right: 10px;
+}
+
+.stranger-things p
+{
+    margin-left: 5px;
+}
+
+.stranger-things span
+{
+    color: #0071eb;
+    margin-right: 120px;
+    font-size: 14px;
+}
+
+
+
+
+.Devices
+{
+    background-color: black;
+    border-bottom: 8px solid #222;
+    padding: 70px ;
+}
+
+#devices-video
+{
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    max-width: 63%;
+    max-height: 47%;
+    top: 34%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+
+.Kids
+{
+    background-color: black;
+    border-bottom: 9px solid #222;
+    padding: 70px 45px;
+    min-height: 500px;
+}
+
+.Kids img
+{
+    max-width: 50%;
+}
+
+
+
+
+.Questions
+{
+    background-color: black;
+    border-bottom: 9px solid #222;
+    padding: 70px 45px;
+}
+
+.question-container
+{
+    margin: 0 auto;
+    max-width: 85%;
+    text-align: center;
+}
+
+.question-container h1
+{
+    font-family: "Netflix-Sans-Black";
+    font-size: 3rem;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    max-width: 90%;
+}
+
+.question-container ul
+{
+    list-style: none;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+li button
+{
+    background-color: #303030;
+    width: 95%;
+    text-align: start;
+    padding: 27px;
+    font-size: 1.5rem;
+    margin-top: 9px;
+    outline: none;
+    transition: .3s;
+}
+
+li button:hover
+{
+    background-color: #525252;
+}
+
+li button img
+{
+    float: right;
+}
+
+li div
+{
+    width: 95%;
+    text-align: left;
+    background-color: #303030;
+    margin: auto;
+    font-size: 1.5rem;
+    padding: 25px;
+    margin-top: 2px;
+    transition: 1s;
+}
+
+
+
+.Questions h3
+{
+    padding-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+.Questions .form
+{
+    display: flex;
+    justify-content: center;
+}
+
+.form #form-div2
+{
+    background-color: rgba(50, 50, 50, 0.5);
+    width: 400px;
+    height: 54px;
+    position: relative;
+    border: .5px solid rgb(100, 100, 100);
+    border-radius: 5px;
+}
+
+#email-login2
+{
+    border: none;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    padding-top: 13px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#email-label2
+{
+    color: rgb(200, 199, 199);
+    position: absolute;
+    font-size: 1rem;
+    top: 15px;
+    left: 20px;
+    transition: .2s;
+    pointer-events: none;
+}
+
+#email-login2:focus + #email-label2
+{
+    top: 0.3rem;
+    font-size: .75rem;
+}
+
+#email-login2:not(:placeholder-shown)#email-login2:not(:focus) + #email-label2
+{
+    top: 0.3rem;
+    font-size: .75rem;
+}
+  
+#email-login2:focus-visible
+{
+    outline: none;
+}
+
+.form #getStarted2
+{
+    width: 190px;
+    background-color: #e50914;
+    font-size: 1.4rem;
+    line-height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#email-error2
+{
+    font-family: "Netflix-Sans-Regular";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding-top: 8px;
+    font-size: .8rem;
+    color: red;
+}
+
+
+
+
+footer
+{
+    background-color: black;
+    padding: 25px 0 50px 0; 
+}
+
+.footer-container
+{
+    width: 77%;
+    margin: auto;
+}
+
+.footer-content
+{
+    width: 100%;
+    margin: auto;
+    min-height: 180px;
+}
+
+footer p
+{
+    color: rgb(190, 190, 190);
+}
+
+footer a
+{
+    color: rgb(190, 190, 190);
+    text-decoration: underline white;
+}
+
+footer ul
+{
+    list-style: none;
+}
+
+footer div .selection
+{
+    border: 1px solid rgb(158, 158, 158);
+    height: 35px;
+    width: 130px;
+    margin-top: 5px;
+    margin-right: 1.3rem;
+    border-radius: 5px;
+}
+
+footer div i
+{
+    margin-left: 10px;
+    margin-right: -5px;
+    color: white;
+    border-radius: 50%;
+}
+
+.footer-content p
+{
+    margin-bottom: 25px;
+}
+
+.footer-content li
+{
+    float: left;
+    width: 25%;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.footer-container p
+{
+    color: rgb(190, 190, 190);
+    margin-top: 25px;
+}
+
+#copyright p
+{
+    padding-top: 25px;
+}
+
+
+
+
+@media (max-width: 1450px)
+{
+    .contents h1
+    {
+        font-size: 2.5rem;
+    }
+    .form div
+    {
+        width: 350px;
+    }
+    .form button
+    {
+        font-size: 1.2rem;
+    }
+    #email-label
+    {
+        bottom: 17px;
+        left: 26px;
+    }
+    .Questions .form div
+    {
+        width: 350px;
+    }
+    .Questions .form button
+    {
+        width: 160px;
+        font-size: 1.2rem;
+    }
+    .Questions #email-label2
+    {
+        bottom: 17px;
+        left: 26px;
+    }
+}
+
+@media (max-width: 1280px)
+{
+    .navbar
+    {
+        padding: 22px 40px;
+    }
+
+    .navbar div
+    {
+        margin-top: 0px;
+    }
+    
+    #language
+    {
+        margin-top: -2px;
+        margin-right: .5;
+    }
+    .signIn
+    {
+        margin-top: 0;
+        margin-right: 0;
+    }
+    .Questions
+    {
+        padding: 70px 0;
+    }
+    .question-container
+    {
+        max-width: 100%;
+    }
+    li div
+    {
+        width:95%
+    }
+}
+
+@media (max-width: 960px)
+{
+    h2
+    {
+        font-size: 2rem;
+    }
+
+    .TV, .Phone, .Devices, .Kids
+    {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .description p
+    {
+        font-size: 1.15rem;
+    }
+
+    .container
+    {
+        display: block;
+        text-align: center;
+    }
+
+    .description
+    {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .Phone .container, .Kids .container
+    {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .Kids img
+    {
+        max-width: 80%;
+    }
+
+    
+    .stranger-things p
+    {
+        margin-right: 50px;
+        margin-left: -15px;
+        font-size: 1rem;
+    }
+    .stranger-things span
+    {
+        margin-right: 50px;
+        margin-left: 30px;
+        font-size: .9rem;
+    }
+    .stranger-things .poster
+    {
+        margin-right: 0;
+    }
+
+    .Questions h1
+    {
+        font-size: 2rem;
+    }
+    .Questions li button img
+    {
+        max-width: 20px;
+        margin: 5px 0;
+    }
+    li button
+    {
+        font-size: 1.15rem;
+        line-height: 30px;
+        padding: 20px;
+    }
+    li div
+    {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 950px)
+{
+    .navbar
+    {
+        margin-bottom: 15px;
+    }
+
+    .navbar div
+    {
+        margin-top: 0px;
+    }
+
+    .navbar div i
+    {
+        height: 15px;
+        margin-top: 8px;
+    }
+
+    .logo
+    {
+        width: 100px;
+        height: 28px;
+    }
+    #language
+    {
+        width: 70px;
+        padding: 0;
+        font-size: 12px;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    .signIn
+    {
+        width: 50px;
+        padding: 0;
+        margin-right: 0;
+        font-size: 12px;
+    }
+    .contents h1
+    {
+        font-size: 2rem;
+        line-height: 40px;
+    }
+    .contents p
+    {
+        font-size: 1.2rem;
+    }
+    h3
+    {
+        font-size: 1.1rem;
+    }
+    .form
+    {
+        display: block;
+    }
+    .form #form-div
+    {
+        height: 50px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    #email-label
+    {
+        bottom: 17px;
+        left: 20px;
+    }
+    .form #getStarted1
+    {
+        font-size: 1rem;
+        width: 130px;
+        padding: 10px;
+    }
+    #background-image
+    {
+        height: 550px;
+    }
+    h2
+    {
+        font-size: 2rem;
+    }
+    .Questions .form
+    {
+        display: block;
+    }
+    .Questions .form div
+    {
+        height: 55px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    .Questions #email-login2
+    {
+        left: 35px;
+    }
+    .Questions #email-label2
+    {
+        bottom: 17px;
+        left: 20px;
+    }
+    .Questions #email-error2
+    {
+        left: 12px;
+    }
+    .Questions .form #getStarted2
+    {
+        font-size: 1rem;
+        width: 130px;
+        margin-top: 30px;
+        padding: 10px;
+    }
+    .footer-container
+    {
+        width: 90%;
+    }
+}
+
+@media (max-width: 780px)
+{
+    .footer-content
+    {
+        min-height: 220px;
+    }
+    .footer-content li
+    {
+        width: 33%;
+    }
+    .Questions form h3
+    {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 710px)
+{
+    .navbar
+    {
+        margin-bottom: 15px;
+    }
+    .contents p
+    {
+        font-size: 1rem;
+    }
+    h3
+    {
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 700px)
+{
+    .contents h1
+    {
+        font-size: 1.8rem;
+        line-height: 40px;
+    }
+    h2
+    {
+        font-size: 1.8rem;
+        line-height: 40px;
+        padding-bottom: 10px;
+    }
+    .mobile, .TV-clip, .feature
+    {
+        width: 80%;
+    }
+
+    .stranger-things
+    {
+        overflow: hidden;
+    }
+
+    .stranger-things p
+    {
+        margin-right: 50px;
+        margin-left: -15px;
+        font-size: .9rem;
+    }
+    .stranger-things span
+    {
+        margin-right: 50px;
+        margin-left: 30px;
+        font-size: .8rem;
+    }
+    .stranger-things .poster
+    {
+        width: 40px;
+    }
+}
+
+@media (max-width: 600px)
+{
+    .footer-content
+    {
+        min-height: 320px;
+    }
+    .footer-content li
+    {
+        width: 50%;
+    }
+}
+
+@media (max-width: 550px)
+{
+    .form #email-label
+    {
+        left: 20px;
+    }
+    .Questions .form #email-label2
+    {
+        left: 20px;
+    }
+}
+@media (max-width: 540px)
+{
+    .contents
+    {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 550px)
+{
+    #email-label
+    {
+        bottom: 17px;
+        left: 28px;
+    }
+    .Questions #email-label2
+    {
+        bottom: 17px;
+        left: 28px;
+    }
+}
+
+@media (max-width: 470px)
+{
+    .form #form-div
+    {
+        width: 100%;
+    }
+    #email-label
+    {
+        bottom: 17px;
+        left: 27px;
+    }
+    .Questions .form #form-div2
+    {
+        width: 95%;
+    }
+    .Questions #email-label2
+    {
+        bottom: 17px;
+        left: 27px;
+    }
+}
+
+
+@media (max-width: 400px)
+{
+    .navbar
+    {
+        margin-bottom: 5px;
+    }
+    .footer-content
+    {
+        min-height: 580px;
+    }
+    .footer-content li
+    {
+        width: 100%;
+    }
+    #email-label
+    {
+        bottom: 17px;
+        left: 25px;
+    }
+    .Questions #email-label2
+    {
+        bottom: 17px;
+        left: 26px;
+    }
+}
+
+@media (max-width: 375px)
+{
+    .navbar div i
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 350px)
+{
+    .stranger-things p
+    {
+        margin-right: 20px;
+        margin-left: 10px;
+        font-size: .7rem;
+    }
+    .stranger-things span
+    {
+        margin-right: 10px;
+        margin-left: 3px;
+        font-size: .7rem;
+    }
+    .stranger-things .poster
+    {
+        width: 30px;
+    }
+    .stranger-things .download
+    {
+        width: 30px;
+    }
+}
+
+@media (max-width: 330px)
+{
+    .navbar div
+    {
+        height: 25px;
+    }
+    #language
+    {
+        height: 25px;
+        font-size: 10px;
+        padding: 0;
+        margin-left: 0;
+        width: 55px;
+    }
+    .signIn
+    {
+        height: 25px;
+        font-size: 10px;
+    }
+    .logo
+    {
+        margin-top: 3px;
+        margin-right: auto;
+        width: 60px;
+        height: 16.8px;
+    }
+}
+
+@media (max-width: 300px)
+{
+    #email-label
+    {
+        bottom: 17px;
+        left: 25px;
+    }
+    .Questions #email-label2
+    {
+        bottom: 17px;
+        left: 25px;
+    }
+}
+
+@media (max-width: 290px)
+{
+    .form a
+    {
+        width: 160px;
+        font-size: 1rem;
+        line-height: 30px;
+    }
+    .Questions .form a
+    {
+        width: 160px;
+        font-size: 1rem;
+        line-height: 30px;
+    }
+}
