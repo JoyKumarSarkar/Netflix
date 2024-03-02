@@ -1,0 +1,1593 @@
+@font-face 
+{
+    font-family: "Netflix-Sans-Regular";
+    src: url("fonts/NetflixSans-Regular.woff2");
+}
+
+@font-face 
+{
+    font-family: "Netflix-Sans-Black";
+    src: url("fonts/NetflixSansBlack.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Netflix-Sans-Regular', sans-serif;
+}
+
+html
+{
+    font-size: 16px;
+}
+
+body
+{
+    background-color: rgb(20, 20, 20);
+    overflow-x: hidden;
+}
+
+
+/*---------------------- 1st Animation ----------------------*/
+.flex-column
+{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading
+{
+    position:fixed;
+    top:0;
+    left:0;
+    gap:2rem;
+    z-index: 999;
+    background-color: rgb(0, 0, 0);
+    height:100vh;
+    visibility: visible;
+    object-fit: cover;
+}
+
+.loading img
+{
+    width: 100%;
+}
+
+.loading.hide-load
+{
+    background-color: black;
+    z-index: -999;
+    visibility: hidden;
+}
+
+@keyframes spin
+{
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}
+
+/*-------------------------------------------------------------*/
+
+
+.flex
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 1%;
+}
+
+.inner
+{
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.container
+{
+    width: 100%;
+    height: 1000%;
+    position: relative;
+}
+
+.navigation
+{
+    width: 100%;
+    z-index: 500;
+    background-color: rgba(20,20,20);
+    position: fixed;
+}
+
+.left-nav
+{
+    width: 70%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo img
+{
+    width: 150px;
+    padding: 20px;
+    padding-right: 0;
+    margin-left: 20px;
+}
+
+.navbar
+{
+    width: 85%;
+}
+
+ul li
+{
+    color: white;
+    list-style: none;
+    font-size: .9rem;
+    margin-top: -5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+ul li:hover
+{
+    color: rgb(222, 222, 222);
+}
+
+.menu
+{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.right-nav
+{
+    width: 30%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right-nav img
+{
+    width: 32px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.right-nav img:hover
+{
+    filter: brightness(0.9);
+}
+
+.fa
+{
+    color: white;
+    margin: 0 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.fa:hover
+{
+    color: rgb(222, 222, 222);
+}
+
+.right-nav p
+{
+    display: inline;
+    margin-left: 5px;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.banner
+{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding-top: 100px;
+}
+
+.banner img
+{
+    width: 20%;
+    margin-top: 150px;
+}
+
+.banner h1
+{
+    font-family: "Netflix-Sans-Black";
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #f32170, #be421c, #cf23cf, #cc6b33);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.banner p
+{
+    width: 50%;
+    font-size: 1.2rem;
+}
+
+.banner h3
+{
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+}
+
+.banner .heading
+{
+    font-style: italic;
+    padding: 0 20px;
+}
+
+.banner .banner-code
+{
+    font-size: 15rem;
+    font-weight: 900;
+}
+
+.banner-button
+{
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.banner .btn
+{
+    padding: 12px 18px;
+    font-size: .9rem;
+    font-weight: 500;
+    margin: 50px 10px 0 0;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.banner .btn1
+{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.play
+{
+    color: black;
+    margin: 0 5px;
+}
+
+.info
+{
+    color: white;
+}
+
+.video-container
+{
+    width: 100%;
+    height: 110%;
+    position: absolute;
+    z-index: -6;
+    left: 0;
+    top: 0;
+}
+
+.video-container video
+{
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.color-overlay
+{
+    margin-top: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+}
+
+.carousel
+{
+    width: 93%;
+    position: absolute;
+    top: 90vh;
+    bottom: 0;
+    overflow: hidden;
+    padding: 0 1%;
+}
+
+.carousel .left-slider
+{
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    opacity: .5;
+    top: 85px;
+    font-size: 50px;
+    height: 100px;
+    max-width: 12px;
+}
+
+.carousel .right-slider
+{
+    color: white;
+    position: absolute;
+    cursor: pointer;
+    opacity: .5;
+    top: 85px;
+    right: 15px;
+    font-size: 50px;
+    height: 100px;
+    max-width: 12px;
+}
+
+.carousel h3
+{
+    color: white;
+    font-size: 1.5rem;
+    margin-left: -16px;
+    border-radius: unset;
+}
+
+.carousel-slider
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 180px;
+    padding: 0 50px;
+}
+
+.carousel-list
+{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+
+.carousel-item
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 0 7px;
+    object-fit: fill;
+    cursor: pointer;
+}
+
+.carousel-item img
+{
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.carousel-item img:hover{
+    transform: scale(1.5);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+}
+
+
+
+/*--------------- Trending Now With Click ----------------*/
+
+.trendingNow-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.trendingNow-carousel h3
+{
+    margin: 20% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.trendingNow-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.trendingNow-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.trendingNow-carousel section .trendingNow
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.trendingNow-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.trendingNow-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+    
+}
+
+.trendingNow-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.trendingNow-carousel section span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.left span
+{
+    left: 20px;
+}
+
+.right span
+{
+    right: 20px;
+}
+
+section span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+/*--------------- Hollywood Movies Carousel With Click ----------------*/
+
+.hollywoodMovies-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.hollywoodMovies-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.hollywoodMovies-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.hollywoodMovies-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.hollywoodMovies-carousel section .hollywoodMovies
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.hollywoodMovies-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.hollywoodMovies-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.hollywoodMovies-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.hollywoodMovies-carousel section .slide2 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.slide2 .left span
+{
+    left: 20px;
+}
+
+.slide2 .right span
+{
+    right: 20px;
+}
+
+section .slide2 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+
+/*--------------- Top 10 Movies Carousel With Click ----------------*/
+
+.top10Movies-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.top10Movies-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.top10Movies-carousel section
+{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.top10Movies-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.top10Movies-carousel section .top10Movies
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 0 8px 0;
+    position: relative;
+    transition: 0.5s;
+}
+
+.top10Movies-carousel picture
+{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.top10Movies-carousel picture img
+{
+    width: 260px;
+    height: 180px;
+}
+
+.top10Movies-carousel section .slide3 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -40px;
+}
+
+.slide3 .left span
+{
+    left: 20px;
+}
+
+.slide3 .right span
+{
+    right: 20px;
+}
+
+section .slide3 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+
+
+/*--------------- Continue Watching for JOY Carousel With Click ----------------*/
+
+.ContinueWatchingForJoy-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.ContinueWatchingForJoy-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.ContinueWatchingForJoy-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.ContinueWatchingForJoy-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.ContinueWatchingForJoy-carousel section .ContinueWatchingForJoy
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.ContinueWatchingForJoy-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.ContinueWatchingForJoy-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.ContinueWatchingForJoy-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.ContinueWatchingForJoy-carousel section .slide4 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.slide4 .left span
+{
+    left: 20px;
+}
+
+.slide4 .right span
+{
+    right: 20px;
+}
+
+section .slide4 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+
+/*--------------- Bollywood Movies Carousel With Click ----------------*/
+
+.bollywoodMovies-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.bollywoodMovies-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.bollywoodMovies-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.bollywoodMovies-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.bollywoodMovies-carousel section .bollywoodMovies
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.bollywoodMovies-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.bollywoodMovies-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.bollywoodMovies-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.bollywoodMovies-carousel section .slide5 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.slide5 .left span
+{
+    left: 20px;
+}
+
+.slide5 .right span
+{
+    right: 20px;
+}
+
+section .slide5 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+
+/*--------------- Movies & TV Shows Dubbed in Tamil Carousel With Click ----------------*/
+
+.dubbedInTamil-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.dubbedInTamil-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.dubbedInTamil-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.dubbedInTamil-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.dubbedInTamil-carousel section .dubbedInTamil
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.dubbedInTamil-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.dubbedInTamil-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.dubbedInTamil-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.dubbedInTamil-carousel section .slide6 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.slide6 .left span
+{
+    left: 20px;
+}
+
+.slide6 .right span
+{
+    right: 20px;
+}
+
+section .slide6 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+/*--------------- Because You Watched Jersey Carousel With Click ----------------*/
+
+.becauseYouWatchedJersey-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.becauseYouWatchedJersey-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.becauseYouWatchedJersey-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.becauseYouWatchedJersey-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.becauseYouWatchedJersey-carousel section .becauseYouWatchedJersey
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.becauseYouWatchedJersey-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.becauseYouWatchedJersey-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.becauseYouWatchedJersey-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.becauseYouWatchedJersey-carousel section .slide7 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.slide7 .left span
+{
+    left: 20px;
+}
+
+.slide7 .right span
+{
+    right: 20px;
+}
+
+section .slide7 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+/*--------------- Only on Netflicks Carousel With Click ----------------*/
+
+.onlyOnNetflicks-carousel
+{
+    margin-left: 3.5%;
+    overflow: hidden;
+}
+
+.onlyOnNetflicks-carousel h3
+{
+    margin: 1% 0 20px 0;
+    color: white;
+    font-size: 1.4rem;
+    z-index: 50;
+}
+
+.onlyOnNetflicks-carousel section
+{
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+}
+
+.onlyOnNetflicks-carousel section::-webkit-scrollbar
+{
+    display: none;
+}
+
+.onlyOnNetflicks-carousel section .onlyOnNetflicks
+{
+    width: 100%;
+    height: 100%;
+    margin: 8px 15px 8px 0;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.5s;
+}
+
+.onlyOnNetflicks-carousel picture
+{
+    width: 100%;
+    height: 250px;
+    display: flex;
+    object-fit: fill;
+    box-sizing: border-box;
+}
+
+.onlyOnNetflicks-carousel picture img
+{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.onlyOnNetflicks-carousel picture img:hover
+{
+    transform: scale(1.3);
+    transition: 0.4s ease-in-out;
+    transition-delay: 0.1s;
+    filter: brightness(70%);
+    z-index: 300;  
+    border-radius: 5px;
+}
+
+.onlyOnNetflicks-carousel section .slide8 span
+{
+    font-size: 50px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: black;
+    background: rgba(255, 255, 255, 0.3);
+    width: 20px;
+    height: 70px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 3px;
+    z-index: 350;
+    position: absolute;
+    margin-top: -50px;
+}
+
+.slide8 .left span
+{
+    left: 20px;
+}
+
+.slide8 .right span
+{
+    right: 20px;
+}
+
+section .slide8 span:hover{
+    background: #333;
+    color: white;
+}
+
+/*-------------------------------------------------------*/
+
+
+.toggle-button
+{
+    display: none;
+    font-size: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #0094da;
+}
+
+
+footer
+{
+    width: 50%;
+    margin: 50px auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+footer button
+{
+    color: white;
+    font-size: 30px;
+    padding: 0 30px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+footer button:hover
+{
+    transform: scale(1.2);
+    transition: 0.2s ease-in-out;
+    transition-delay: 0.1s;
+    border-radius: 5px;
+}
+
+footer button a{
+    color: white;
+    text-decoration: none;
+}
+
+footer p, footer p a
+{
+    color: white;
+    font-size: .9rem;
+    line-height: 25px;
+    margin-top: 30px;
+}
+
+/*----------------- Media Queries ------------------*/
+
+@media screen and (max-width: 1500px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 25%;
+    }
+}
+
+@media screen and (max-width: 1250px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 22%;
+    }
+
+    .trendingNow-carousel h3
+    {
+        margin-top: 30%;
+    }
+}
+
+@media only screen and (max-width: 1180px)
+{
+    .navbar
+    {
+        width: 100%;
+        display: none;
+    }
+
+    ul li
+    {
+        margin-right: 30px;
+    }
+
+    .left-nav, .right-nav
+    {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 20px 0;
+    }
+
+    .toggle-button
+    {
+        display: block;
+        font-size: 1.5rem;
+        color: white;
+        margin-top: 17px;
+        position: absolute;
+        right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1160px)
+{
+    .banner img
+    {
+        width: 250px;
+    }
+
+    .banner h1
+    {
+        font-size: 3rem;
+    }
+
+    .banner p
+    {
+        font-size: 1rem;
+        width: 70%;
+    }
+
+    .navbar{
+        width: 80%;
+    }
+  
+    .trendingNow-carousel h3
+    {
+        margin-top: 35%;
+    }
+}
+
+
+@media screen and (max-width: 1000px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 40%;
+    }
+
+    footer
+    {
+        width: 100%;
+    }
+
+    footer button
+    {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 45%;
+    }
+}
+
+@media screen and (max-width: 800px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px)
+{
+    .banner img
+    {
+        width: 225px;
+    }
+    
+    .banner h1
+    {
+        font-size: 2.5rem;
+    }
+
+    .banner
+    {
+        padding: 60px 10px;
+    }
+
+    .video-container, .video-container video, .color-overlay
+    {
+        height: 95vh;
+    }
+
+    .carousel
+    {
+        top: 90vh;
+    }
+}
+
+@media screen and (max-width: 700px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 58%;
+    }
+}
+
+@media only screen and (max-width: 600px)
+{
+    .onlyOnNetflicks-carousel h3,
+    .becauseYouWatchedJersey-carousel h3,
+    .dubbedInTamil-carousel h3,
+    .bollywoodMovies-carousel h3,
+    .ContinueWatchingForJoy-carousel h3,
+    .top10Movies-carousel h3,
+    .hollywoodMovies-carousel h3,
+    .trendingNow-carousel h3,
+    .carousel h3
+    {
+        font-size: 1.1rem;
+    }
+
+    .trendingNow-carousel h3
+    {
+        margin-top: 60%;
+    }
+
+    .carousel h3
+    {
+        margin-left: -1%;
+    }
+
+    .onlyOnNetflicks-carousel picture img,
+    .becauseYouWatchedJersey-carousel picture img,
+    .dubbedInTamil-carousel picture img,
+    .bollywoodMovies-carousel picture img,
+    .ContinueWatchingForJoy-carousel picture img,
+    .hollywoodMovies-carousel picture img,
+    .trendingNow-carousel picture img
+    {
+        width: 200px;
+        height: 120px;
+    }
+
+    .onlyOnNetflicks-carousel section,
+    .becauseYouWatchedJersey-carousel section,
+    .dubbedInTamil-carousel section,
+    .bollywoodMovies-carousel section,
+    .ContinueWatchingForJoy-carousel section,
+    .hollywoodMovies-carousel section,
+    .trendingNow-carousel section
+    {
+        height: 140px;
+    }
+
+    .onlyOnNetflicks-carousel picture,
+    .becauseYouWatchedJersey-carousel picture,
+    .dubbedInTamil-carousel picture,
+    .bollywoodMovies-carousel picture,
+    .ContinueWatchingForJoy-carousel picture,
+    .hollywoodMovies-carousel picture,
+    .trendingNow-carousel picture
+    {
+        height: 120px;
+    }
+
+    .onlyOnNetflicks-carousel section .slide8 span,
+    .becauseYouWatchedJersey-carousel section .slide7 span,
+    .dubbedInTamil-carousel section .slide6 span,
+    .bollywoodMovies-carousel section .slide5 span,
+    .ContinueWatchingForJoy-carousel section .slide4 span,
+    .hollywoodMovies-carousel section .slide2 span,
+    .trendingNow-carousel section .slide1 span
+    {
+        margin-top: -45px;
+    }
+}
+
+@media only screen and (max-width: 550px)
+{
+    .banner img
+    {
+        width: 200px;
+    }
+    
+    .banner h1
+    {
+        font-size: 2rem;
+    }
+
+    .banner p
+    {
+        font-size: .9rem;
+    }
+
+    .menu
+    {
+        flex-direction: column;
+    }
+
+    ul li
+    {
+        margin-bottom: 10px;
+    }
+
+    .trendingNow-carousel h3
+    {
+        margin-top: 70%;
+    }
+}
+
+@media only screen and (max-width: 500px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 75%;
+    }
+}
+
+@media only screen and (max-width: 460px)
+{
+    .trendingNow-carousel h3
+    {
+        margin-top: 80%;
+    }
+
+    footer p
+    {
+        font-size: .8rem;
+        line-height: 15px;
+    }
+
+    footer button a
+    {
+        padding: 0 2px;
+    }
+}
+
+@media only screen and (max-width: 420px)
+{
+    .logo img
+    {
+        width: 125px;
+        padding-left: 5px;
+        margin-left: 20px;
+    }
+    .banner img
+    {
+        margin-bottom: 30px;
+        margin-top: 250px;
+    }
+    .trendingNow-carousel h3
+    {
+        margin-top: 75%;
+    }
+}
+
+@media only screen and (max-width: 410px)
+{
+    .logo img
+    {
+        width: 120px;
+        padding: 10px;
+        padding-top: 15px;
+    }
+    .toggle-button
+    {
+        font-size: 1rem;
+        padding: 0;
+        margin-top: 15px;
+    }
+    .banner h1
+    {
+        font-size: 1.95rem;
+    }
+
+    .banner p
+    {
+        width: 100%;
+    }
+
+    .video-container video
+    {
+        margin-top: 30px;
+    }
+
+    .video-container, .video-container video, .color-overlay
+    {
+        height: 90vh;
+    }
+
+    .carousel
+    {
+        top: 80vh;
+    }
+}
+
+@media only screen and (max-width: 330px)
+{
+    footer button a
+    {
+        padding: 0;
+        font-size: 21px;
+    }
+}
